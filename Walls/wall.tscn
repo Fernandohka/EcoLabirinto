@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3l7dmedpta2p"]
+
+[ext_resource type="PackedScene" uid="uid://ocf2glg8462h" path="res://Walls/base_wall.tscn" id="1_ujrbx"]
+[ext_resource type="Script" uid="uid://da2qlym6lmefj" path="res://Walls/wall.gd" id="2_m2aq0"]
+
+[node name="Wall" unique_id=1083837486 instance=ExtResource("1_ujrbx")]
+script = ExtResource("2_m2aq0")
+
+[node name="Sprite2D" parent="." index="1" unique_id=520486180]
+modulate = Color(0.43529412, 1, 0.23921569, 1)

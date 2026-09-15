@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://tutjeyg8drqc"]
+
+[ext_resource type="PackedScene" uid="uid://cgfx2e30q58cc" path="res://Player/player.tscn" id="1_ro55w"]
+
+[node name="Map" type="Node2D" unique_id=604339778]
+
+[node name="TileMap" type="Node2D" parent="." unique_id=861291073]
+
+[node name="Player" parent="." unique_id=1338713793 instance=ExtResource("1_ro55w")]
+scale = Vector2(0.08, 0.08)

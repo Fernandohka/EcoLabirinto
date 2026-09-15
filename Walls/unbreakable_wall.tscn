@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cv5vmdroa1aw7"]
+
+[ext_resource type="PackedScene" uid="uid://ocf2glg8462h" path="res://Walls/base_wall.tscn" id="1_ugkmi"]
+
+[node name="UnbreakableWall" unique_id=1083837486 instance=ExtResource("1_ugkmi")]
+
+[node name="Sprite2D" parent="." index="1" unique_id=520486180]
+modulate = Color(0.16924527, 0.1692453, 0.16924527, 1)

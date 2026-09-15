@@ -1,0 +1,8 @@
+res://Player/player.tscn
+res://Player/player.gd
+res://Map/map.tscn
+res://Walls/base_wall.tscn
+res://Walls/wall.tscn
+res://Walls/unbreakable_wall.tscn
+res://Map/map_1.tscn
+res://Walls/wall.gd
