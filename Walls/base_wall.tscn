@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://ocf2glg8462h"]
 
+[ext_resource type="Script" uid="uid://dvcik8wjxycm6" path="res://Walls/base_wall.gd" id="1_n2uua"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbn6"]
 size = Vector2(200, 200)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_anssw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(220, 216)
+
 [node name="BaseWall" type="StaticBody2D" unique_id=1083837486]
 scale = Vector2(0.5, 0.5)
+collision_layer = 2
+script = ExtResource("1_n2uua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2017055942]
 shape = SubResource("RectangleShape2D_wwbn6")
@@ -14,3 +21,9 @@ shape = SubResource("RectangleShape2D_wwbn6")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=520486180]
 scale = Vector2(200, 200)
 texture = SubResource("CanvasTexture_anssw")
+
+[node name="FireRange" type="Area2D" parent="." unique_id=321415205]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireRange" unique_id=1757248828]
+shape = SubResource("RectangleShape2D_ebum8")

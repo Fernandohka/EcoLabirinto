@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends baseWall
 
 var isOnFire: bool = false
 
@@ -18,3 +18,8 @@ func setFire(onFire: bool) -> void:
 	else:
 		isOnFire = false
 		$Sprite2D.modulate = Color(0.435, 1.0, 0.239)
+
+
+func _on_fire_range_body_entered(body: Node2D) -> void:
+	if (body.is_class('CharacterBody2D')):
+		setFire(false)

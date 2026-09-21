@@ -8,3 +8,5 @@ script = ExtResource("2_m2aq0")
 
 [node name="Sprite2D" parent="." index="1" unique_id=520486180]
 modulate = Color(0.43529412, 1, 0.23921569, 1)
+
+[connection signal="body_entered" from="FireRange" to="." method="_on_fire_range_body_entered"]

@@ -14,9 +14,9 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 	
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var objeto_colidido = collision.get_collider()
-		
-		if (objeto_colidido.has_method("setFire") and objeto_colidido.isOnFire == true):
-			objeto_colidido.setFire(false)
+	#for i in get_slide_collision_count():
+		#var collision = get_slide_collision(i)
+		#var objeto_colidido = collision.get_collider()
+		#
+		#if (objeto_colidido.has_method("setFire") and objeto_colidido.isOnFire == true):
+			#objeto_colidido.setFire(false)
