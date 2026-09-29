@@ -16,6 +16,7 @@ collision_layer = 2
 script = ExtResource("1_n2uua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2017055942]
+visible = false
 shape = SubResource("RectangleShape2D_wwbn6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=520486180]
@@ -26,4 +27,5 @@ texture = SubResource("CanvasTexture_anssw")
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireRange" unique_id=1757248828]
+visible = false
 shape = SubResource("RectangleShape2D_ebum8")

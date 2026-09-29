@@ -5,4 +5,4 @@
 [node name="UnbreakableWall" unique_id=1083837486 instance=ExtResource("1_ugkmi")]
 
 [node name="Sprite2D" parent="." index="1" unique_id=520486180]
-modulate = Color(0.16924527, 0.1692453, 0.16924527, 1)
+modulate = Color(0.06469658, 0.06469651, 0.06469653, 1)
