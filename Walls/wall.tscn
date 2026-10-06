@@ -2,11 +2,90 @@
 
 [ext_resource type="PackedScene" uid="uid://ocf2glg8462h" path="res://Walls/base_wall.tscn" id="1_ujrbx"]
 [ext_resource type="Script" uid="uid://da2qlym6lmefj" path="res://Walls/wall.gd" id="2_m2aq0"]
+[ext_resource type="Texture2D" uid="uid://c6ohnqvph83qb" path="res://Walls/Slice 11.png" id="3_pwes5"]
+[ext_resource type="Texture2D" uid="uid://yue88pg80cdq" path="res://Walls/Tree_2.png" id="4_eoadr"]
+[ext_resource type="Texture2D" uid="uid://dp36fqqll1say" path="res://Walls/Slice 15.png" id="5_s3c6e"]
+[ext_resource type="Texture2D" uid="uid://ben4a7nob8mvp" path="res://Walls/Slice 1.png" id="6_7d6uq"]
+[ext_resource type="Texture2D" uid="uid://jfl20nev05gq" path="res://Walls/Slice 2.png" id="7_svf5w"]
+[ext_resource type="Texture2D" uid="uid://oxugtni2opn1" path="res://Walls/Slice 5.png" id="8_7d6uq"]
 
 [node name="Wall" unique_id=1083837486 instance=ExtResource("1_ujrbx")]
 script = ExtResource("2_m2aq0")
 
+[node name="CollisionShape2D" parent="." index="0" unique_id=2017055942]
+modulate = Color(0.46802926, 0.2922165, 0.021718375, 1)
+
 [node name="Sprite2D" parent="." index="1" unique_id=520486180]
-modulate = Color(0.43529412, 1, 0.23921569, 1)
+modulate = Color(0.16078432, 0.4862745, 0.09411765, 1)
+
+[node name="Tree2" type="Sprite2D" parent="." index="3" unique_id=674347883]
+light_mask = 1023
+visibility_layer = 1023
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-1, -0.9999981)
+scale = Vector2(3.09375, 2.7714288)
+texture = ExtResource("4_eoadr")
+
+[node name="Tree1" type="Sprite2D" parent="." index="4" unique_id=246048669]
+position = Vector2(3.9999998, 4.7683716e-07)
+scale = Vector2(4.0833335, 2.4999998)
+
+[node name="Slice11" type="Sprite2D" parent="." index="5" unique_id=187735909]
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(66, 72)
+scale = Vector2(4.125, 3.625)
+texture = ExtResource("3_pwes5")
+
+[node name="Slice15" type="Sprite2D" parent="." index="6" unique_id=1291169150]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-42.000004, 74)
+scale = Vector2(3.1250002, 2.9375)
+texture = ExtResource("5_s3c6e")
+
+[node name="Slice1" type="Sprite2D" parent="." index="7" unique_id=258413945]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-74, 68)
+scale = Vector2(2.125, 2.7187502)
+texture = ExtResource("6_7d6uq")
+
+[node name="Slice2" type="Sprite2D" parent="." index="8" unique_id=183957363]
+texture_filter = 1
+position = Vector2(0, -32.750008)
+scale = Vector2(6.25, 4.4218745)
+texture = ExtResource("7_svf5w")
+
+[node name="Slice3" type="Sprite2D" parent="." index="9" unique_id=1454746370]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-64, -68)
+scale = Vector2(2.1562498, 2)
+texture = ExtResource("7_svf5w")
+
+[node name="Slice3" type="Sprite2D" parent="Slice3" index="0" unique_id=94931860]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(38.399994, 9.846159)
+scale = Vector2(2.1875, 1.625)
+texture = ExtResource("7_svf5w")
+
+[node name="Slice3" type="Sprite2D" parent="Slice3/Slice3" index="0" unique_id=1056505871]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8.359184, -4.5443783)
+scale = Vector2(0.54681146, 0.71782565)
+texture = ExtResource("7_svf5w")
+
+[node name="Slice5" type="Sprite2D" parent="." index="10" unique_id=1937069284]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(64, 66)
+scale = Vector2(4.75, 2.6875)
+texture = ExtResource("8_7d6uq")
 
 [connection signal="body_entered" from="FireRange" to="." method="_on_fire_range_body_entered"]
