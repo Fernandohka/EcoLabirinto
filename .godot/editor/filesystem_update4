@@ -1,5 +1,12 @@
+res://Ameacas/trator.tscn
+res://Ameacas/nevoa.tscn
+res://Coletaveis/animal.tscn
+res://Coletaveis/checkpoint.tscn
+res://Coletaveis/saida.tscn
+res://Ameacas/cacador.tscn
+res://Map/map.tscn
 res://Player/player.tscn
-res://Walls/base_wall.tscn
+res://Player/player.gd
+res://Ameacas/chama.tscn
+res://Coletaveis/interacao.gd
 res://Map/map.gd
-res://Walls/unbreakable_wall.tscn
-res://Map/map_1.tscn

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b7v6cp8lk6tv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(128, 128)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cdagb"]
+
+[node name="Checkpoint" type="Area2D" unique_id=92252015]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62276289]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244564789]
+modulate = Color(0, 0.9372549, 0.50980395, 0.27058825)
+scale = Vector2(127.99999, 127.99999)
+texture = SubResource("CanvasTexture_cdagb")

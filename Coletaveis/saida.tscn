@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://daweet7e1dw2j"]
+
+[ext_resource type="Script" uid="uid://bdiylaeccfn50" path="res://Coletaveis/interacao.gd" id="1_31qn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(128, 128)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cdagb"]
+
+[node name="Saida" type="Area2D" unique_id=92252015]
+script = ExtResource("1_31qn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62276289]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244564789]
+modulate = Color(0, 0.6243604, 0.9142844, 1)
+scale = Vector2(127.99999, 125.99999)
+texture = SubResource("CanvasTexture_cdagb")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cf3rfwiat0ipn"]
+
+[ext_resource type="Script" uid="uid://bdiylaeccfn50" path="res://Coletaveis/interacao.gd" id="1_86w8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(128, 128)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cdagb"]
+
+[node name="Animal" type="Area2D" unique_id=92252015]
+script = ExtResource("1_86w8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62276289]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244564789]
+modulate = Color(1, 0.42624077, 0.6459205, 1)
+scale = Vector2(127.99999, 127.99999)
+texture = SubResource("CanvasTexture_cdagb")

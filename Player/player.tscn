@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_l8h54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
-size = Vector2(128, 128)
+size = Vector2(118, 116)
 
 [node name="Player" type="CharacterBody2D" unique_id=1338713793]
-collision_mask = 6
 script = ExtResource("1_4ntmi")
+tamanho_bloco = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1449735691]
 shape = SubResource("RectangleShape2D_ebum8")
@@ -18,5 +18,3 @@ texture = ExtResource("1_l8h54")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1529818194]
 zoom = Vector2(0.8, 0.8)
-limit_left = 0
-limit_top = 0
