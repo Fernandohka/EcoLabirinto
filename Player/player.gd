@@ -17,13 +17,13 @@ func _input(event):
 
 	var direcao = Vector2.ZERO
 	
-	if event.is_action_pressed("ui_right"):
+	if event.is_action_pressed("D"):
 		direcao = Vector2.RIGHT
-	elif event.is_action_pressed("ui_left"):
+	elif event.is_action_pressed("A"):
 		direcao = Vector2.LEFT
-	elif event.is_action_pressed("ui_down"):
+	elif event.is_action_pressed("S"):
 		direcao = Vector2.DOWN
-	elif event.is_action_pressed("ui_up"):
+	elif event.is_action_pressed("W"):
 		direcao = Vector2.UP
 
 	if direcao != Vector2.ZERO:

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_5cbny"]
 [ext_resource type="Script" uid="uid://c5tt0njxfg04k" path="res://Map/map.gd" id="1_njngi"]
 [ext_resource type="PackedScene" uid="uid://cgfx2e30q58cc" path="res://Player/player.tscn" id="1_ro55w"]
+[ext_resource type="PackedScene" uid="uid://cupngbht3xv5b" path="res://arvore.tscn" id="2_ptuj4"]
 [ext_resource type="PackedScene" uid="uid://daweet7e1dw2j" path="res://Coletaveis/saida.tscn" id="4_ptuj4"]
 [ext_resource type="PackedScene" uid="uid://cf3rfwiat0ipn" path="res://Coletaveis/animal.tscn" id="5_rr5ff"]
 [ext_resource type="PackedScene" uid="uid://b7v6cp8lk6tv" path="res://Coletaveis/checkpoint.tscn" id="6_a0x20"]
@@ -20,6 +21,9 @@ texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/modulate = Color(0.24313726, 1, 0.46666667, 1)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rr5ff"]
+scenes/1/scene = ExtResource("2_ptuj4")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cbny"]
 texture = ExtResource("1_5cbny")
 texture_region_size = Vector2i(128, 128)
@@ -31,12 +35,14 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5ps16")
-sources/1 = SubResource("TileSetAtlasSource_5cbny")
+sources/3 = SubResource("TileSetAtlasSource_5cbny")
+sources/1 = SubResource("TileSetScenesCollectionSource_rr5ff")
 
 [node name="Map" type="TileMapLayer" unique_id=352659270]
 tile_set = SubResource("TileSet_xvf33")
 script = ExtResource("1_njngi")
-max_casas = 200
+max_casas = 256
+tamanho_corredor_max = 4
 cena_jogador = ExtResource("1_ro55w")
 cena_saida = ExtResource("4_ptuj4")
 cena_animal = ExtResource("5_rr5ff")

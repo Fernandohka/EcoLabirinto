@@ -1,8 +1,8 @@
-TileMapLayer
-CollisionShape2D
-Sprite2D
-Area2D
-Camera2D
 StaticBody2D
 Node2D
+CollisionShape2D
+Sprite2D
+TileMapLayer
+Area2D
+Camera2D
 CharacterBody2D
