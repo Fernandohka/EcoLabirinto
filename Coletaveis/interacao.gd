@@ -1,20 +1,34 @@
 extends Area2D
 
 func _ready():
-	# Liga o sinal de colisão automaticamente
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	# Verifica se quem pisou foi o jogador
-	if body.name == "Player":
-		print("Você interagiu com: ", self.name)
-		
-		# Aqui você pode adicionar lógica! Ex: se for a saída, muda de fase.
-		if self.name.begins_with("Saida"):
-			print("VOCÊ VENCEU O LABIRINTO!")
-		elif self.name.begins_with("Chama") or self.name.begins_with("Cacador"):
-			print("Você sofreu dano da ameaça!")
-		elif self.name.begins_with("Animal"):
-			print("Animal resgatado!")
-			
-		queue_free() # Destrói o objeto do mapa (some da tela)
+	if not body.has_method("receber_dano"):
+		return
+
+	# Checa pelos Grupos em vez do Nome
+	if is_in_group("chama"):
+		body.receber_dano(25)
+		print("Dano por Queimada!")
+	
+	elif is_in_group("cacador"):
+		body.receber_dano(35)
+		print("Dano por Caçador!")
+	
+	elif is_in_group("nevoa"):
+		body.receber_dano(15)
+		print("Dano por Névoa Tóxica!")
+	
+	elif is_in_group("trator"):
+		body.receber_dano(40)
+		print("Dano por Trator!")
+	
+	elif is_in_group("animal"):
+		body.adicionar_ao_inventario("Animal Resgatado")
+		print("Animal salvo!")
+	
+	elif is_in_group("saida"):
+		print("VOCÊ COMPLETOU A FASE!")
+	
+	queue_free()

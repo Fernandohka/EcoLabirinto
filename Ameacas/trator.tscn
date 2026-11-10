@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bp5wkd1e6yuh7"]
 
+[ext_resource type="Script" uid="uid://bdiylaeccfn50" path="res://Coletaveis/interacao.gd" id="1_wmmiv"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(128, 128)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cdagb"]
 
-[node name="Trator" type="Area2D" unique_id=92252015]
+[node name="Trator" type="Area2D" unique_id=92252015 groups=["trator"]]
+script = ExtResource("1_wmmiv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62276289]
 shape = SubResource("RectangleShape2D_ebum8")

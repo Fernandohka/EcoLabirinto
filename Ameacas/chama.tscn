@@ -7,7 +7,7 @@ size = Vector2(128, 128)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cdagb"]
 
-[node name="Chama" type="Area2D" unique_id=92252015]
+[node name="Chama" type="Area2D" unique_id=92252015 groups=["chama"]]
 script = ExtResource("1_ytup2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62276289]
