@@ -1,0 +1,17 @@
+res://Adventure/main.tscn::30b11cf92c00543ea121fa323eb17897::1794799100::res://.godot/exported/133200997/export-fc71c5f61d2e12b86c76c714257d5e53-main.scn
+res://Ameacas/cacador.tscn::dca534c8aaefc2fa623002710f0d6711::1794799100::res://.godot/exported/133200997/export-ed7028e79d82f7af0d6c67249b558a74-cacador.scn
+res://Ameacas/chama.tscn::7c93040c2710f6991972ca17251f9290::1794799100::res://.godot/exported/133200997/export-f205da7724a0a436206fc3e342881468-chama.scn
+res://Ameacas/nevoa.tscn::d76af97f22d71db0501b256bdeaa429f::1794799100::res://.godot/exported/133200997/export-9cfd6a24dc7d3f7fd5e3a5afee413a32-nevoa.scn
+res://Ameacas/trator.tscn::fd06db7858d1142850b5ed6359eb628b::1794799100::res://.godot/exported/133200997/export-6dcf7bb8f557271f286ddb11d78be899-trator.scn
+res://Coletaveis/animal.tscn::97a4a84c83e8f9081c157e7e99d10e8a::1794799100::res://.godot/exported/133200997/export-771c04b7d27ca79923bfb1e13498da54-animal.scn
+res://Coletaveis/checkpoint.tscn::8338aed7077914879f22e2b0c957edf5::1794799100::res://.godot/exported/133200997/export-d1c8b5235fe434159d17a15d424457ad-checkpoint.scn
+res://Coletaveis/saida.tscn::8049caaf10e8436f3249e66d61efba0c::1794799100::res://.godot/exported/133200997/export-f3f494fb8012292383c70b4eaf8ce74f-saida.scn
+res://Map/map.tscn::841607aa8679ef931601e7facfc5898a::1794799100::res://.godot/exported/133200997/export-4fe98b85452c28cc00661a254f26af1d-map.scn
+res://Map/map_1.tscn::ab481c25315e8bdd7b675a6a146519ef::1794799100::res://.godot/exported/133200997/export-e11632c1520aca1c530b6b43300d5e76-map_1.scn
+res://Map/tile_map_layer.tscn::03ee4debb959cb5357727a7b5536404d::1794799100::res://.godot/exported/133200997/export-a1fee12f951478f98088a12221fbeb2e-tile_map_layer.scn
+res://Player/player.tscn::ed6f811bcc81e7a16239886523921d26::1794799100::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
+res://Walls/base_wall.tscn::1e9c272b95b0e3a5c74c2af708870fc7::1794799100::res://.godot/exported/133200997/export-b85a2c8105f57d5a0c21721f5891a076-base_wall.scn
+res://Walls/unbreakable_wall.tscn::0db98671ff9202b094735eadb75d5404::1794799100::res://.godot/exported/133200997/export-af13d48e6c07541057ffa29cab33af1f-unbreakable_wall.scn
+res://Walls/wall.tscn::4b9dfc5fe49dd3c2e15a24e614d49dfb::1794799100::res://.godot/exported/133200997/export-4630e42019117eb3a4e151597c12e93c-wall.scn
+res://arvore.tscn::0978cb00709f2594731c62953caef140::1794799100::res://.godot/exported/133200997/export-802e81286ac297328d0da10b8da307ab-arvore.scn
+res://hud.tscn::6057768321b3e64603e735dd86ef2002::1794799100::res://.godot/exported/133200997/export-f4cf891e5f7a93b93d9b27cfb8401ccb-hud.scn
