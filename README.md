@@ -1,87 +1,249 @@
-# EcoLabirinto — Guardiões da Floresta V7
-
-**Jogo 2D top-down para Godot 4.7.2.** Continuação jogável da V6, com foco em game feel, desempenho, UX e Lobo de Fogo. Não é jogo de tabuleiro: movimento livre em labirintos gerados por seed.
-
-## Abrir
-
-1. Descompacte o ZIP inteiro.
-2. No Godot 4.7.2, importe **`Eco/project.godot`**.
-3. Espere a primeira importação de `.png` e `.wav`.
-4. Execute com **F5**.
-
-**Testes de console (Godot no PATH):**
-
-```bash
-godot --headless --path Eco --editor --quit
-godot --headless --path Eco --script res://Adventure/smoke_test.gd
-godot --headless --path Eco --script res://Adventure/qa_visual.gd
-godot --headless --path Eco --script res://Adventure/qa_v7.gd
-godot --headless --path Eco --script res://Adventure/qa_seeds_v7.gd
-python Eco/check_project.py
+<div align="center">
+🌿 EcoLabirinto
+GUARDIÕES DA FLORESTA
+Uma aventura brasileira em pixel art: explore, proteja e restaure a floresta.
+Godot 4.7.2 · 2D top-down · Mapas por seed · Português (BR) · V7.1
+<img src="ARTE_V5_PREVIA.png" alt="Prévia dos sprites em pixel art de EcoLabirinto" width="660" />
+Quatro guardiões. Quatro biomas. Uma floresta para salvar.
+</div>
+---
+> [!IMPORTANT]
+> **Esta é a V7.1 do jogo.** A versão inclui correções de apresentação de textos no menu e mantém as melhorias de jogabilidade da V7. A validação por verificador estático **não substitui** executar o projeto no Godot 4.7.2.
+🧭 Navegação rápida
+Quero…	Ir para…
+🎮 Começar a jogar	Instalação e primeira partida
+⌨️ Aprender os comandos	Controles
+🏕️ Conhecer os modos	Modos de jogo
+🔥 Enfrentar o chefe	Lobo de Fogo
+🧬 Entender as seeds	Seeds, coleção e recordes
+🛠️ Trabalhar no projeto	Estrutura técnica
+✅ Fazer os testes	Verificação e checklist
+🩹 Resolver problemas	Solução de problemas
+---
+🌳 Sobre o jogo
+O EcoLabirinto — Guardiões da Floresta é um jogo de aventura 2D com visão de cima, inspirado no espírito de exploração dos jogos clássicos. Não é um jogo de tabuleiro: o jogador se movimenta livremente por labirintos gerados proceduralmente, enfrenta ameaças ambientais e protege animais da fauna brasileira.
+A proposta dialoga com a ODS 15 — Vida Terrestre. Cada partida coloca o jogador diante de um novo percurso, e o código da seed permite revisitar uma mesma configuração inicial dentro da mesma versão do gerador.
+O ciclo de uma partida
+```text
+ESCOLHER MODO + DIFICULDADE + GUARDIÃO
+                   ↓
+          DEFINIR OU GERAR SEED
+                   ↓
+          EXPLORAR O BIOMA
+                   ↓
+    RESGATAR • COLETAR • APAGAR FOGO
+                   ↓
+           CUMPRIR OBJETIVOS
+                   ↓
+           AVANÇAR / CONCLUIR
 ```
+---
+<a id="instalacao"></a>
+🚀 Instalação e primeira partida
+Você precisa de: Godot 4.7.2 e do projeto completamente descompactado.
+Extraia o ZIP, mantendo a pasta `Eco/` e todas as subpastas.
+Abra o Gerenciador de Projetos do Godot.
+Escolha Importar e selecione `Eco/project.godot`.
+Aguarde a importação inicial das imagens (`.png`) e dos sons (`.wav`).
+Abra o projeto e pressione F5 para executar.
+No menu inicial, escolha Começar aventura, selecione o modo, a dificuldade e o guardião.
+> [!TIP]
+> **Primeira vez?** Comece no **Fácil**. Para testar o chefe sem atravessar a campanha, escolha **Contra o Relógio → Fase 5**.
+O que encontrar no menu
+Opção	Para que serve
+Começar aventura	Iniciar uma partida, selecionar modo e personagem
+Como jogar	Consultar instruções dentro do próprio jogo
+Bestiário e segredos	Consultar espécies e descobertas opcionais
+Placar de recordes	Ver resultados de partidas registrados localmente
+Configurações	Ajustar apresentação e efeitos disponíveis
+Sair	Fechar o jogo
+---
+<a id="controles"></a>
+🎮 Controles
+Tecla	Ação	Observações
+`W A S D` ou `↑ ← ↓ →`	Mover	Movimento em quatro direções; diagonais normalizadas
+`Shift`	Correr	Consome energia
+`E`	Interagir	Resgatar animais, recolher itens, apagar incêndios e outras ações próximas
+`Espaço`	Poder especial	Habilidade exclusiva do personagem; respeita a recarga
+`Tab`	Caderno	Abre missões e informações detalhadas
+`Esc`	Pausar	Abre o menu de pausa
+Dica de leitura da HUD: durante a exploração, a lateral prioriza barras, objetivos resumidos e o minimapa. As informações extensas ficam no caderno e nos menus, para não cobrir a ação.
+---
+<a id="modos"></a>
+🗺️ Modos de jogo
+🌱 Campanha
+Atravesse os quatro biomas brasileiros e enfrente o Lobo de Fogo no capítulo final.
+A campanha tem cinco capítulos e quatro tentativas para o percurso completo.
+Uma derrota ou reinício manual consome uma tentativa.
+A fase do Lobo funciona como checkpoint de reinício: perder no chefe não obriga a refazer os quatro biomas anteriores.
+Completar os objetivos ambientais permite avançar e enfrentar o desfecho.
+⏱️ Contra o Relógio
+Escolha uma fase e tente terminá-la no menor tempo possível. Ideal para demonstrações rápidas, disputas de speedrun e testes específicos de biomas ou do chefe.
+♾️ Sobrevivência
+Enfrente ondas de ameaças com dificuldade crescente. O foco está em resistir, usar os recursos com eficiência e buscar um resultado melhor a cada tentativa.
+🎚️ Dificuldade
+As opções Fácil, Médio e Difícil ajustam o desafio. No combate final, a vida base do chefe é:
+Fácil	Médio	Difícil
+75 HP	90 HP	105 HP
+---
+🌴 Os biomas
+Capítulo	Região	Atmosfera da aventura
+01	🌿 Amazônia	Vegetação densa e exploração da floresta
+02	🌾 Cerrado	Paisagem de árvores retorcidas e vegetação aberta
+03	🐊 Pantanal	Identidade de áreas úmidas e fauna característica
+04	🌳 Mata Atlântica	Floresta fechada e biodiversidade
+05	🔥 Coração em Chamas	Confronto com o Lobo de Fogo
+Cada bioma recebe variações próprias de cores, vegetação e elementos de cenário. O terreno utiliza uma camada estática própria, enquanto os objetos e efeitos dinâmicos são desenhados separadamente.
+---
+🐾 Guardiões, resgates e colecionáveis
+O jogador escolhe entre quatro guardiões com poderes diferentes e recarga individual. O combate e a exploração incentivam o uso estratégico da habilidade, da energia e da água disponível.
+Animais de missão: fazem parte dos objetivos ambientais.
+Bestiário: registra espécies descobertas e permite consultar o progresso.
+Segredos e memes: são colecionáveis opcionais; não impedem o cumprimento da missão principal.
+📁 Adicionar animais secretos
+A pasta `Assets/Animals/Memes/` foi reservada para PNGs extras. Ela já contém exemplos e um arquivo próprio de instruções (`README.txt`). Consulte esse arquivo antes de adicionar recursos: copiar um PNG para a pasta, por si só, não garante que ele seja carregado pelo jogo.
+---
+❤️ Vida, energia e Flor da Vida
+Ao enfrentar inimigos ou fogo, o jogador pode perder vida. Para reduzir situações de derrota inevitável, a aventura possui um sistema de cura emergencial.
+A Flor da Vida pode aparecer quando a vida fica crítica (referência de teste: 30 HP ou menos).
+O posicionamento é verificado por conectividade de caminhos (BFS) e busca evitar fogo, inimigos e o chefe.
+A cura deve ser alcançável por um caminho possível, não surgir atrás de uma parede isolada.
+O sistema precisa ser confirmado em jogo real, especialmente em mapas grandes e durante a batalha final.
+---
+<a id="lobo"></a>
+🔥 O Lobo de Fogo
+O capítulo final combina objetivos ambientais com um chefe que persegue o jogador, anuncia perigos no cenário e possui três etapas de combate.
+Como a batalha funciona
+Observe o marcador circular ocre: ele anuncia onde o fogo pode surgir.
+Use o intervalo de aviso (aproximadamente 1,8 a 2,8 segundos, conforme a situação) para sair da área de risco.
+Apague focos, resgate animais e recolha lixo: essas ações contribuem para enfraquecer o Lobo.
+Aproveite os períodos de atordoamento para recuperar o controle da arena.
+Conclua os objetivos e vença o chefe para encerrar o capítulo.
+A quantidade de incêndios simultâneos é limitada, e a dificuldade influencia os parâmetros do confronto. A proposta é oferecer perigo compreensível, não uma arena impossível de acompanhar.
+Teste rápido: `Começar aventura → Contra o Relógio → Fácil → Fase 5`.
+---
+<a id="seeds"></a>
+🧬 Seeds, coleção e recordes
+🌱 Seeds — revisite uma configuração inicial
+Uma seed é um código usado para reproduzir a geração inicial de uma fase. Para comparar duas partidas, mantenha iguais:
+a seed;
+o bioma/fase;
+a dificuldade;
+a versão do gerador.
+A seed controla a geração inicial; o comportamento posterior dos inimigos também depende das ações do jogador. As partidas não são gravações idênticas do futuro.
+🏆 Recordes
+Os resultados do placar contemplam dados como modo, dificuldade, personagem, fase, tempo, pontuação e seed. A V7 inclui o campo técnico `generator_version` para identificar com qual versão de geração o resultado foi obtido.
+O bestiário e os recordes fazem parte da progressão local. Para a banca, reinicie o programa e confirme se os dados continuam presentes.
+---
+🎨 Direção visual e acessibilidade
+O EcoLabirinto busca uma floresta brasileira em pixel art de tons terrosos e verdes dessaturados, com silhuetas nítidas e UI de leitura rápida.
+Elemento	Direção adotada
+Paleta	Controlada em `Adventure/theme_palette.gd`
+HUD	Lateral compacta, com informações essenciais sem scroll durante a partida
+Menus e bestiário	Rolagem apenas onde é aceitável; cartões de coleção horizontais
+Dia e noite	Atmosfera escurecida e iluminação radial localizada
+Dano e ações	Flash, tremor e micro-impacto discretos
+Configurações	Opções de animações reduzidas e sons desligados
+Tipografia: esta versão utiliza fonte sans-serif do sistema com fallback, para reduzir problemas de compatibilidade. Para acrescentar fontes pixelizadas, use fontes que a equipe tenha licença para redistribuir.
+🆕 Correção específica da V7.1
+A V7.1 corrige uma regressão visual no menu: textos cortados ou aparentemente invisíveis, causada pelo truncamento global e por restrições de tamanho. Foram ajustados títulos, subtítulos, cartões, painel principal e apresentação dos nomes. Consulte `CHANGELOG_V7_1.md` para a lista de alterações.
+---
+<a id="arquitetura"></a>
+🏗️ Estrutura técnica
+```text
+Eco/
+├── project.godot              # Arquivo principal do projeto
+├── README.md                  # Este guia
+├── CHANGELOG_V7.md            # Evolução da V7
+├── CHANGELOG_V7_1.md          # Correções de menu da V7.1
+├── CHECKLIST_BANCA.md         # Lista de verificação para a apresentação
+├── Adventure/
+│   ├── main.gd                # Estado da partida, entrada e progressão
+│   ├── world.gd               # Geração procedural, IA e eventos
+│   ├── terrain_layer.gd       # Cenário estático pré-desenhado
+│   ├── theme_palette.gd       # Paleta de cores por bioma
+│   ├── interface.gd           # Menus, HUD e telas do jogo
+│   ├── player_visual.gd       # Aparência do guardião e hit flash
+│   ├── ambient_fx.gd          # Atmosfera, luz e elementos decorativos
+│   ├── qa_menu_v7_1.gd        # Verificações específicas do menu
+│   └── qa_*.gd                # Outras verificações automatizadas
+└── Assets/
+    ├── Audio/                 # Seis efeitos sonoros originais
+    └── Animals/
+        ├── Mission/           # Animais de missão
+        └── Memes/             # Conteúdo extra opcional
+```
+> [!NOTE]
+> As pastas do protótipo anterior (`Map/`, `Player/` etc.) foram mantidas. O cenário principal **não** foi convertido para `TileMapLayer`; a V7 utiliza uma camada estática própria para evitar redesenhar árvores e solo continuamente.
+---
+<a id="checklist"></a>
+🧪 Verificação e checklist
+Testes pelo terminal
+Execute os comandos a partir da pasta que contém `Eco/`, com o executável do Godot no `PATH`:
+```bash
+# Importação e validação do projeto no editor
+ godot --headless --path Eco --editor --quit
 
-Se o comando for `godot4`, substitua `godot` por `godot4`.
+# Geração, apresentação visual e integração
+ godot --headless --path Eco --script res://Adventure/smoke_test.gd
+ godot --headless --path Eco --script res://Adventure/qa_visual.gd
+ godot --headless --path Eco --script res://Adventure/qa_v7.gd
+ godot --headless --path Eco --script res://Adventure/qa_seeds_v7.gd
+ godot --headless --path Eco --script res://Adventure/qa_menu_v7_1.gd
 
-## Novidades V7
-
-| Área | Mudança |
-|---|---|
-| Game feel | Movimento com aceleração e desaceleração em `_physics_process` (60 ticks físicos/s por padrão), com diagonais normalizadas. Buffer de E de 140 ms. |
-| Desempenho | `terrain_layer.gd` desenha mapa/árvores apenas quando o mundo muda de seed/fase. `world.gd` redesenha apenas objetos dinâmicos a 30 FPS. |
-| Visual | `theme_palette.gd` centraliza paleta terrosa brasileira. UI em sans-serif legível, cartões compactos sem scroll no HUD. |
-| Coleção | Bestiário usa **uma coluna de cards horizontais**; evita nomes empilhados letra por letra. Scroll permanece apenas nos menus. |
-| Atmosfera | `ambient_fx.gd` desenha folhas/vaga-lumes discretos, luz radial noturna do jogador e luz do Lobo na fase final. |
-| Feedback | Flash de dano, micro-impacto com timer independente da escala e treme-treme configurável pela opção de animações reduzidas. |
-| Curas | Flor da Vida emerge apenas em casa conectada por BFS, longe de fogo, inimigos e chefe. Verifica novamente periodicamente quando a vida está crítica. |
-| Chefe | Vida 75/90/105 para Fácil/Médio/Difícil. Três fases legíveis. Aviso circular no solo e 1,8–2,8 s de reação. Incêndios limitados. A fase final é um checkpoint de reinício. |
-| Áudio | Seis efeitos simples originais: resgatar, coletar, água, cura, dano e Lobo. Podem ser desligados em Configurações. |
-| Seeds e placar | Preservados. Novo campo `generator_version` em recordes para identificar a versão do jogo. |
-
-## Controles
-
-- **WASD / setas**: mover. **Shift**: correr (consome energia).
-- **E**: resgatar, coletar, apagar ou interagir.
-- **Espaço**: poder exclusivo do guardião, com recarga.
-- **TAB**: caderno de missões e detalhes. **ESC**: pausa.
-- **Campanha:** 4 tentativas para os cinco capítulos. Derrota ou reinício manual consome tentativa. O início da fase do Lobo funciona como checkpoint; a campanha não volta aos quatro biomas anteriores após uma derrota no chefe.
-
-## Teste rápido da luta
-
-Entre no jogo e escolha **Contra o Relógio → Fácil → Fase 5 (Lobo de Fogo)**. Apague focos de incêndio, resgate animais e recolha lixo para enfraquecer o chefe. O círculo ocre marca o local do próximo fogo. Quando ele for atordoado, haverá uma janela de respiro.
-
-## Arquitetura
-
-- `Adventure/main.gd`: estado da partida, input, física, câmera, SFX, poderes e objetivos.
-- `Adventure/world.gd`: procedimentos de seed, IA, ameaças e objetos dinâmicos.
-- `Adventure/terrain_layer.gd`: **camada de cenário estático**; cada fase chama `rebuild()` uma única vez.
-- `Adventure/theme_palette.gd`: paleta e variações dos biomas.
-- `Adventure/interface.gd`: menus, bestiário, HUD, alertas e efeitos de tela.
-- `Adventure/player_visual.gd`: desenho do guardião e hit flash.
-- `Adventure/ambient_fx.gd`: folhas e vaga-lumes em camada leve.
-- `Assets/Audio/`: seis sons originais WAV (não são músicas comerciais).
-- `Assets/Animals/Memes/`: pasta para PNGs de animais extras; não afetam missões obrigatórias.
-
-**Fontes:** a interface utiliza fontes sans-serif comuns do sistema em vez de distribuir arquivos de fontes de terceiros. Para títulos pixelizados, escolha no Godot uma fonte licenciada que a equipe tenha direito de usar.
-
-## Checklist de teste da banca
-
-- [ ] F5 abre menu sem erro GDScript, `Parse error`, recursos faltando ou erros de áudio.
-- [ ] Janela cheia: texto e imagens organizados; HUD sem rolagem; textos do bestiário horizontais.
-- [ ] Player fica na área jogável e não atravessa paredes ao correr na diagonal.
-- [ ] Com 30 HP ou menos, o jogo oferece cura próxima e **alcançável**.
-- [ ] TAB abre detalhes e ESC pausa; nenhuma sobreposição impede movimentação.
-- [ ] Campanha perde uma das quatro tentativas e reinicia fase correspondente.
-- [ ] Lobo: aviso visível antes do fogo; três estágios; vidas 75/90/105 nos três modos.
-- [ ] Mudar `Animações reduzidas` tira treme-treme e micro-impacto.
-- [ ] `Sons: desligados` silencia SFX.
-- [ ] A mesma seed reproduz o mapa, inimigos e itens iniciais de um mesmo bioma/dificuldade.
-- [ ] Testar FPS com o painel **Depurador → Monitores** (não existe benchmark real deste ambiente).
-
-## Limitações conhecidas / transparência
-
-- **Não foi possível abrir o executável do Godot neste ambiente.** Os scripts foram revisados e verificados por um teste estático de estrutura, mas ainda precisam passar pelo compilador real e pela jogabilidade no Godot 4.7.2 da equipe. Os scripts `qa_*.gd` são entregues para essa validação.
-- O terreno está otimizado em uma camada estática própria, **não foi convertido para TileMapLayer**. Isso elimina a recalcificação do cenário no redraw dinâmico, mas a migração a TileMapLayer pode continuar sendo avaliada se benchmarks mostrarem gargalos.
-- Sons e partículas são leves e provisórios. Ainda é recomendável realizar testes de mistura sonora, hitboxes, acessibilidade e balanceamento com jogadores antes da banca.
-- Não há mecânica de pulo/coyote time porque EcoLabirinto é aventura top-down, não plataforma.
-
-As pastas originais do protótipo (`Map/`, `Player/` etc.) permanecem. O arquivo `README_V6.md` documenta mudanças anteriores.
+# Arquivos, imagens e integridade estrutural
+ python Eco/check_project.py
+```
+> Se seu executável se chama `godot4`, troque `godot` por `godot4`. No Windows, você também pode chamar diretamente o caminho completo do `.exe` do Godot. Verifique o resultado de cada comando e as mensagens de erro; a presença de um script de teste não significa que ele já foi executado com sucesso.
+Checklist para a apresentação
+[ ] O projeto importa e F5 abre o menu sem erros de script ou recursos.
+[ ] O título ECO LABIRINTO, o selo ODS 15, os subtítulos e os nomes aparecem completos.
+[ ] Menus e bestiário mantêm textos horizontais, inclusive em tela cheia.
+[ ] A HUD não exige scroll; personagem e área de jogo permanecem visíveis.
+[ ] Movimento diagonal e colisões funcionam em esquinas e corredores.
+[ ] As interações `E`, poder `Espaço`, `Tab` e `Esc` respondem corretamente.
+[ ] A cura emerge em área segura e alcançável quando a vida está crítica.
+[ ] A campanha consome tentativas e mantém o checkpoint do chefe.
+[ ] O aviso de incêndio aparece antes do ataque do Lobo.
+[ ] Sons e animações reduzidas obedecem às configurações.
+[ ] Repetir a seed reproduz o estado inicial esperado.
+[ ] Bestiário e placar persistem ao fechar e reabrir o jogo.
+[ ] FPS e estabilidade são observados em Depurador → Monitores do Godot.
+Para a lista histórica mais ampla, veja `CHECKLIST_BANCA.md`.
+---
+<a id="problemas"></a>
+🩹 Solução de problemas
+<details>
+<summary><strong>O Godot mostra “Parse error” ao iniciar</strong></summary>
+Abra Depurador → Erros e identifique o arquivo, linha e mensagem completos.
+Confirme que o projeto foi aberto com a versão prevista, Godot 4.7.2.
+Execute a importação pelo editor antes de usar os testes em modo headless.
+Não trate `python Eco/check_project.py` como um compilador de GDScript: ele faz verificação estrutural.
+</details>
+<details>
+<summary><strong>Os títulos ou os nomes aparecem vazios ou cortados</strong></summary>
+Confirme que está utilizando a V7.1, não a V7 inicial.
+Abra o menu principal, seleção de personagem, Bestiário e Placar.
+Execute `qa_menu_v7_1.gd` e observe possíveis mensagens no console.
+Teste também em janela e tela cheia, verificando tamanho, alinhamento e legibilidade.
+</details>
+<details>
+<summary><strong>Imagens ou sons não carregam</strong></summary>
+Descompacte a pasta `Eco/` por completo. Abra `project.godot` pelo Gerenciador do Godot e aguarde a importação inicial de recursos `.png` e `.wav` antes de pressionar F5.
+</details>
+<details>
+<summary><strong>A mesma seed gerou um resultado inesperado</strong></summary>
+Confirme se o bioma, a dificuldade e a versão do gerador são os mesmos. Compare a configuração inicial da fase, não os movimentos posteriores dos inimigos ou suas próprias decisões.
+</details>
+---
+⚠️ Estado de validação e limitações
+Compilação real no Godot 4.7.2: ainda depende de execução em um computador com Godot instalado. Verificações estáticas de arquivos não garantem ausência de erros GDScript ou bugs de jogabilidade.
+Desempenho: a separação de cenário estático e elementos dinâmicos reduz redesenho desnecessário, mas o FPS precisa ser medido em partidas reais.
+Acabamento: sons, partículas, equilíbrio do Lobo, colisões e acessibilidade merecem testes com jogadores antes da banca.
+Escopo do jogo: não foram adicionados saltos, Coyote Time ou Jump Buffering, pois EcoLabirinto é uma aventura top-down, não um jogo de plataformas.
+---
+<div align="center">
+🌱 Cada resgate importa. Cada bioma tem uma história.
+EcoLabirinto — Guardiões da Floresta  
+ODS 15 · Vida Terrestre · Projeto em desenvolvimento
+</div>
