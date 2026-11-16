@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bjkl7sp7cvqif"]
+
+[ext_resource type="PackedScene" uid="uid://d3l7dmedpta2p" path="res://Walls/wall.tscn" id="1_m7acq"]
+[ext_resource type="PackedScene" uid="uid://cv5vmdroa1aw7" path="res://Walls/unbreakable_wall.tscn" id="2_8d7a2"]
+[ext_resource type="Script" uid="uid://cv5ns2sv12x71" path="res://Map/tile_map_layer.gd" id="3_8d7a2"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_j3f3d"]
+scenes/1/scene = ExtResource("1_m7acq")
+scenes/2/scene = ExtResource("2_8d7a2")
+
+[sub_resource type="TileSet" id="TileSet_nlv5n"]
+tile_size = Vector2i(100, 100)
+sources/0 = SubResource("TileSetScenesCollectionSource_j3f3d")
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=1278491860]
+tile_set = SubResource("TileSet_nlv5n")
+script = ExtResource("3_8d7a2")

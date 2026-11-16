@@ -1,0 +1,17 @@
+ECOLABIRINTO V7.1 — VALIDAÇÃO DA CORREÇÃO DE INTERFACE
+
+[PASSOU] Auditoria do código: título, subtítulos e notas com altura reservada.
+[PASSOU] Remoção do corte com reticências que afetava os rótulos de menus.
+[PASSOU] Fonte-padrão do Godot no lugar de fonte de sistema não garantida.
+[PASSOU] Cálculo de posição e dimensão do painel em cinco larguras de referência.
+[PASSOU] Arquivos de gameplay e gerador de mapas iguais aos da V7 original.
+[PASSOU] check_project.py: verificações estáticas sem erros.
+[PENDENTE] Importação no Godot 4.7.2, parse de GDScript e execução real.
+[PENDENTE] Captura e validação visual no Windows.
+
+Para compilar/validar no Godot 4.7.2 (dentro da pasta pai de Eco):
+  godot --headless --path Eco --editor --quit
+  godot --headless --path Eco --script res://Adventure/qa_menu_v7_1.gd
+  godot --headless --path Eco --script res://Adventure/qa_v7.gd
+
+Também abra Eco/project.godot e pressione F5.
